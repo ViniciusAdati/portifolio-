@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Fundo com leve grid, referência ao "terminal" — usado com moderação atrás do Hero */
+.bg-terminal-grid {
+  background-color: theme('colors.base.900');
+  background-image: theme('backgroundImage.grid');
+  background-size: theme('backgroundSize.grid');
+}
+
+/* Foco visível para acessibilidade de teclado */
+:focus-visible {
+  outline: 2px solid theme('colors.signal.DEFAULT');
+  outline-offset: 3px;
+}
+
+::selection {
+  background: theme('colors.signal.DEFAULT');
+  color: theme('colors.base.900');
+}
+
+/* Scrollbar discreta */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: theme('colors.base.900');
+}
+::-webkit-scrollbar-thumb {
+  background: theme('colors.base.600');
+  border-radius: 999px;
+}
