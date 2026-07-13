@@ -1,11 +1,11 @@
-import type { Project } from '../data/projects'
+import type { Project } from "../data/projects";
 
 interface ProjectCardProps {
-  project: Project
+  project: Project;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  const { title, description, tags, imageUrl, repoUrl, liveUrl } = project
+  const { title, description, tags, imageUrl, repoUrl, liveUrl } = project;
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-base-600 bg-base-800 transition hover:border-signal/50 hover:shadow-[0_0_30px_-10px_rgba(76,224,179,0.25)]">
@@ -17,8 +17,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           loading="lazy"
           className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
           onError={(e) => {
-            // Fallback visual caso a imagem ainda não tenha sido adicionada
-            e.currentTarget.style.display = 'none'
+            e.currentTarget.style.display = "none";
           }}
         />
       </div>
@@ -66,5 +65,5 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </div>
     </article>
-  )
+  );
 }
